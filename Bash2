@@ -1,0 +1,4 @@
+#Commands I like
+
+curl 
+i.e curl "http://www.google.com/" >> lungisani.txt
