@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<title>Customize the bash shell environments - Linux Shell Scripting Tutorial - A Beginner's handbook</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Customize_the_bash_shell_environments","wgTitle":"Customize the bash shell environments","wgCurRevisionId":3375,"wgRevisionId":3375,"wgArticleId":332,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Variables and Quoting","Commands"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Customize_the_bash_shell_environments","wgRelevantArticleId":332,"wgRequestId":"d4552fdec618b7ff4ded34db","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":false,"nearby":false,"watchlist":false,"tagline":false},"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":true,"publish":true}});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.pygments":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1lrsqbf",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/wiki/load.php?debug=false&amp;lang=en&amp;modules=ext.pygments%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector" />
+<script async="" src="/wiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/wiki/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector" />
+<meta name="generator" content="MediaWiki 1.29.2" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="Linux Shell Scripting Tutorial - A Beginner's handbook (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://bash.cyberciti.biz/wiki/api.php?action=rsd" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-nc-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Linux Shell Scripting Tutorial - A Beginner's handbook Atom feed" href="/wiki/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+
+  _gaq.push(['_setAccount', 'UA-108650-10']);
+
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+
+  })();
+
+</script>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+
+     (adsbygoogle = window.adsbygoogle || []).push({
+
+          google_ad_client: "ca-pub-7825705102693166",
+
+          enable_page_level_ads: true
+
+     });
+
+</script>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Customize_the_bash_shell_environments rootpage-Customize_the_bash_shell_environments skin-vector action-view"> <div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+<a id="top"></a>
+<div class="mw-indicators mw-body-content">
+</div>
+<h1 id="firstHeading" class="firstHeading" lang="en">Customize the bash shell environments</h1>
+<p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:90px" data-ad-client="ca-pub-7825705102693166" data-ad-slot="8350870668"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p>
+<div id="bodyContent" class="mw-body-content">
+<div id="siteSub">From Linux Shell Scripting Tutorial - A Beginner&#039;s handbook</div>
+<div id="contentSub"></div>
+<div id="jump-to-nav" class="mw-jump">
+Jump to: <a href="#mw-head">navigation</a>, <a href="#p-search">search</a>
+</div>
+<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><span class="noprint" style="&quot;display:"><table id="toc" style="width: 100%; background: #FAF5FF; border-color:#DDCEF2;border-style:solid;border-width:0.077em;padding:0.692em;line-height:1.5em;"><tr><td style="text-align: left; width:33%"><a href="/guide/Bash_variable_existence_check" title="Bash variable existence check">&#8592; Bash variable existence check</a></td><td style="text-align: center; width: 33%"><b><a href="/guide/Main_Page" title="Main Page">Home</a></b></td><td style="text-align: right; width: 33%"><a href="/guide/Recalling_command_history" title="Recalling command history">Recalling command history &#8594;</a></td></tr></table></span>
+<ul><li> Strictly speaking there are two types of shell variables:
+<ol><li> <a href="/wiki/index.php?title=Local_variables&amp;action=edit&amp;redlink=1" class="new" title="Local variables (page does not exist)">Local variables</a> (shell variable) - Used by shell and or user scripts. All user created variables are <b>local unless exported</b> using the <a href="/guide/Export_command" class="mw-redirect" title="Export command">export command</a>.</li>
+<li> <a href="/wiki/index.php?title=Environment_variables&amp;action=edit&amp;redlink=1" class="new" title="Environment variables (page does not exist)">Environment variables</a> - Used by shell or user but they are also passed onto other command. Environment variables are <b>passed to subprocesses or subshells</b>. </li></ol></li></ul>
+<div id="toc" class="toc"><div id="toctitle" class="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#How_do_I_configure_and_customize_the_Bash_shell_environment.3F"><span class="tocnumber">1</span> <span class="toctext">How do I configure and customize the Bash shell environment?</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#What_should_I_put_in_shell_starup_files_for_customization.3F"><span class="tocnumber">1.1</span> <span class="toctext">What should I put in shell starup files for customization?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#How_do_I_view_local_variables.3F"><span class="tocnumber">2</span> <span class="toctext">How do I view local variables?</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#How_do_I_export_local_variables.3F"><span class="tocnumber">3</span> <span class="toctext">How do I export local variables?</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#How_do_I_view_environment_variables.3F"><span class="tocnumber">4</span> <span class="toctext">How do I view environment variables?</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#Common_Environment_Variables"><span class="tocnumber">5</span> <span class="toctext">Common Environment Variables</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="#How_do_I_locate_command.3F"><span class="tocnumber">5.1</span> <span class="toctext">How do I locate command?</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#whereis_command"><span class="tocnumber">5.2</span> <span class="toctext">whereis command</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#whatis_command"><span class="tocnumber">5.3</span> <span class="toctext">whatis command</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="How_do_I_configure_and_customize_the_Bash_shell_environment.3F">How do I configure and customize the Bash shell environment?</span></h2>
+<ul><li> Your Bash shell can be configured using the following:
+<ol><li> <a href="/guide/Variables" title="Variables">Variables</a></li>
+<li> <a href="/guide/Set_command" title="Set command">set command</a></li>
+<li> <a href="/guide/Shopt_command" title="Shopt command">shopt command</a></li>
+<li> <a href="/guide/Chapter_9:_Functions" title="Chapter 9: Functions">Functions</a></li>
+<li> <a href="/guide/Create_and_use_aliases" title="Create and use aliases">Alias</a></li></ol></li></ul>
+<h3><span class="mw-headline" id="What_should_I_put_in_shell_starup_files_for_customization.3F">What should I put in shell starup files for customization?</span></h3>
+<p>A typically Linux or UNIX user do the following:
+</p>
+<ul><li> Setup a custom prompt.</li>
+<li> Setup terminal settings depending on which terminal you're using.</li>
+<li> Set the search path such as JAVA_HOME, and ORACLE_HOME.</li>
+<li> Set environment variables as needed by programs.</li>
+<li> Run commands that you want to run whenever you log in or log out.</li></ul>
+<h2><span class="mw-headline" id="How_do_I_view_local_variables.3F">How do I view local variables?</span></h2>
+<p>Use the set built-in command to view all variables:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="nb">set</span>
+</pre></div>
+<p>Usually, all upper-case variables are set by bash. For example,
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="nb">echo</span> <span class="nv">$SHELL</span>
+<span class="nb">echo</span> <span class="nv">$MAIL</span>
+</pre></div>
+<h2><span class="mw-headline" id="How_do_I_export_local_variables.3F">How do I export local variables?</span></h2>
+<p>Use the <a href="/guide/Export_command" class="mw-redirect" title="Export command">export command</a>:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="nb">export</span> <span class="nv">EDITOR</span><span class="o">=</span>/usr/bin/vim
+<span class="c1"># export DISPLAY environment variable and run xeyes </span>
+<span class="nb">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>localhost:11.0 xeyes
+</pre></div>
+<p>Be careful when changing the shell variables. For a complete list of variables set by shell, read the man
+page for bash by typing the following command:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>man bash
+</pre></div>
+<h2><span class="mw-headline" id="How_do_I_view_environment_variables.3F">How do I view environment variables?</span></h2>
+<p>Use the env command to view all environment variables:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>env
+</pre></div>
+<p>Sample outputs:
+</p>
+<pre>ORBIT_SOCKETDIR=/tmp/orbit-vivek
+SSH_AGENT_PID=4296
+GPG_AGENT_INFO=/tmp/gpg-ElCDl5/S.gpg-agent:4297:1
+TERM=xterm
+SHELL=/bin/bash
+XDG_SESSION_COOKIE=186611583e30fed08439ca0047067c9d-1255929792.297209-1700262470
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/vivek/.gtkrc-1.2-gnome2
+WINDOWID=48252673
+GTK_MODULES=canberra-gtk-module
+USER=vivek
+SSH_AUTH_SOCK=/tmp/keyring-s4fcR1/socket.ssh
+GNOME_KEYRING_SOCKET=/tmp/keyring-s4fcR1/socket
+SESSION_MANAGER=local/vivek-desktop:/tmp/.ICE-unix/4109
+USERNAME=vivek
+DESKTOP_SESSION=gnome
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games
+GDM_XSERVER_LOCATION=local
+PWD=/home/vivek
+LANG=en_IN
+GDM_LANG=en_IN
+GDMSESSION=gnome
+SHLVL=1
+HOME=/home/vivek
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+LOGNAME=vivek
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-16XVNAMkFB,guid=0acb6a08e3992ccc7338726c4adbf7c3
+XDG_DATA_DIRS=/usr/local/share/:/usr/share/:/usr/share/gdm/
+WINDOWPATH=7
+DISPLAY=:0.0
+COLORTERM=gnome-terminal
+XAUTHORITY=/home/vivek/.Xauthority
+OLDPWD=/usr/share/man
+_=/usr/bin/env</pre>
+<h2><span class="mw-headline" id="Common_Environment_Variables">Common Environment Variables</span></h2>
+<ul><li> HOME - Your home directory path.</li>
+<li> PATH - Set your executable search path.</li>
+<li> PWD - Your current working directory. </li>
+<li> See <a href="/guide/Variables#Commonly_Used_Shell_Variables" title="Variables">more standard environment variables list</a>.</li></ul>
+<h3><span class="mw-headline" id="How_do_I_locate_command.3F">How do I locate command?</span></h3>
+<p>The which command displays the pathnames of the files which would be executed in the current environment. It does this by searching the PATH for executable files matching the names of the arguments.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>which command-name
+</pre></div>
+<p>Show fortune command path which print a random, hopefully interesting, adage on screen. Type the following command:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>which fortune
+</pre></div>
+<p>Sample output:
+</p>
+<pre>/usr/games/fortune</pre>
+<p>Display your current PATH:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="nb">echo</span> <span class="nv">$PATH</span>
+</pre></div>
+<p>Sample outputs:
+</p>
+<pre>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games</pre>
+<p>Customize your PATH variable and remove /usr/games from PATH:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+</pre></div>
+<p>Now, try searching fortune command path, enter:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>which fortune
+</pre></div>
+<p>Try executing fortune command:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>fortune
+</pre></div>
+<p>Sample outputs:
+</p>
+<pre>-bash: fortune: command not found</pre>
+<p>The fortune command could not be located because '/usr/games' is not included in the PATH environment variable. You can type full command path (/usr/games/fortune) or simply add /usr/games to PATH variable:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:/usr/games
+fortune
+</pre></div>
+<p>Sample outputs:
+</p>
+<pre>Your lucky number has been disconnected.</pre>
+<h3><span class="mw-headline" id="whereis_command">whereis command</span></h3>
+<p>The <a href="/wiki/index.php?title=Whereis_command&amp;action=edit&amp;redlink=1" class="new" title="Whereis command (page does not exist)">whereis command</a> is used to locate the binary, source, and manual page files for a command.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>whereis command-name
+whereis ls
+</pre></div>
+<p>Sample outputs:
+</p>
+<pre>ls: /bin/ls /usr/share/man/man1/ls.1.gz</pre>
+<h3><span class="mw-headline" id="whatis_command">whatis command</span></h3>
+<p>The <a href="/wiki/index.php?title=Whatis_command&amp;action=edit&amp;redlink=1" class="new" title="Whatis command (page does not exist)">whatis command</a> is used display a short description about command. whatis command searches the manual page names and displays the manual page descriptions for a command:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>whatis command-name
+whatis date
+whatis ifconfig
+whatis ping
+</pre></div>
+<p>Sample outputs:
+</p>
+<pre>date (1)             - print or set the system date and time
+ifconfig (8)         - configure a network interface
+ping (8)             - send ICMP ECHO_REQUEST to network hosts
+</pre>
+<span class="noprint" style="&quot;display:"><table id="toc" style="width: 100%; background: #FAF5FF; border-color:#DDCEF2;border-style:solid;border-width:0.077em;padding:0.692em;line-height:1.5em;"><tr><td style="text-align: left; width:33%"><a href="/guide/Bash_variable_existence_check" title="Bash variable existence check">&#8592; Bash variable existence check</a></td><td style="text-align: center; width: 33%"><b><a href="/guide/Main_Page" title="Main Page">Home</a></b></td><td style="text-align: right; width: 33%"><a href="/guide/Recalling_command_history" title="Recalling command history">Recalling command history &#8594;</a></td></tr></table></span>
+
+
+
+</div><p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:336px;height:280px" data-ad-client="ca-pub-7825705102693166" data-ad-slot="5804044661"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</p>
+<div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://bash.cyberciti.biz/wiki/index.php?title=Customize_the_bash_shell_environments&amp;oldid=3375">https://bash.cyberciti.biz/wiki/index.php?title=Customize_the_bash_shell_environments&amp;oldid=3375</a>" </div>
+<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/guide/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="/guide/Category:Variables_and_Quoting" title="Category:Variables and Quoting">Variables and Quoting</a></li><li><a href="/guide/Category:Commands" title="Category:Commands">Commands</a></li></ul></div></div> <div class="visualClear"></div>
+</div>
+</div>
+<div id="mw-navigation">
+<h2>Navigation menu</h2>
+<div id="mw-head">
+<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+<h3 id="p-personal-label">Personal tools</h3>
+<ul>
+<li id="pt-login"><a href="/wiki/index.php?title=Special:UserLogin&amp;returnto=Customize+the+bash+shell+environments" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li> </ul>
+</div>
+<div id="left-navigation">
+<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+<h3 id="p-namespaces-label">Namespaces</h3>
+<ul>
+<li id="ca-nstab-main" class="selected"><span><a href="/guide/Customize_the_bash_shell_environments" title="View the content page [c]" accesskey="c">Page</a></span></li>
+<li id="ca-talk" class="new"><span><a href="/wiki/index.php?title=Talk:Customize_the_bash_shell_environments&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+</ul>
+</div>
+<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+<h3 id="p-variants-label">
+<span>Variants</span><a href="#"></a>
+</h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+</div>
+<div id="right-navigation">
+<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+<h3 id="p-views-label">Views</h3>
+<ul>
+<li id="ca-view" class="selected"><span><a href="/guide/Customize_the_bash_shell_environments">Read</a></span></li>
+<li id="ca-viewsource"><span><a href="/wiki/index.php?title=Customize_the_bash_shell_environments&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+<li id="ca-history" class="collapsible"><span><a href="/wiki/index.php?title=Customize_the_bash_shell_environments&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+</ul>
+</div>
+<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+<div class="menu">
+<ul>
+</ul>
+</div>
+</div>
+<div id="p-search" role="search">
+<h3>
+<label for="searchInput">Search</label>
+</h3>
+<form action="/wiki/index.php" id="searchform">
+<div id="simpleSearch">
+<input type="search" name="search" placeholder="Search Linux Shell Scripting Tutorial - A Beginner's handbook" title="Search Linux Shell Scripting Tutorial - A Beginner's handbook [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" /> </div>
+</form>
+</div>
+</div>
+</div>
+<div id="mw-panel">
+<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/guide/Main_Page" title="Visit the main page"></a></div>
+<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+<h3 id='p-navigation-label'>Navigation</h3>
+<div class="body">
+<ul>
+<li id="n-mainpage-description"><a href="/guide/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-recentchanges"><a href="/guide/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="/guide/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li> </ul>
+</div>
+</div>
+<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+<h3 id='p-tb-label'>Tools</h3>
+<div class="body">
+<ul>
+<li id="t-whatlinkshere"><a href="/guide/Special:WhatLinksHere/Customize_the_bash_shell_environments" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/guide/Special:RecentChangesLinked/Customize_the_bash_shell_environments" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/guide/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="/wiki/index.php?title=Customize_the_bash_shell_environments&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/wiki/index.php?title=Customize_the_bash_shell_environments&amp;oldid=3375" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/wiki/index.php?title=Customize_the_bash_shell_environments&amp;action=info" title="More information about this page">Page information</a></li> </ul>
+</div>
+</div>
+<center><p><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:120px;height:600px; " data-ad-client="ca-pub-7825705102693166" data-ad-slot="8378479061"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></p></center>
+</div>
+</div>
+<div id="footer" role="contentinfo">
+<ul id="footer-info">
+<li id="footer-info-lastmod"> This page was last edited on 29 March 2016, at 22:50.</li>
+<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="//creativecommons.org/licenses/by-nc-sa/3.0/">Attribution-Noncommercial-Share Alike 3.0 Unported</a> unless otherwise noted.</li>
+</ul>
+<ul id="footer-places">
+<li id="footer-places-privacy"><a href="/guide/Linux_Shell_Scripting_Tutorial_-_A_Beginner%27s_handbook:Privacy_policy" title="Linux Shell Scripting Tutorial - A Beginner's handbook:Privacy policy">Privacy policy</a></li>
+<li id="footer-places-about"><a href="/guide/Linux_Shell_Scripting_Tutorial_-_A_Beginner%27s_handbook:About" title="Linux Shell Scripting Tutorial - A Beginner's handbook:About">About Linux Shell Scripting Tutorial - A Beginner&#039;s handbook</a></li>
+<li id="footer-places-disclaimer"><a href="/guide/Linux_Shell_Scripting_Tutorial_-_A_Beginner%27s_handbook:General_disclaimer" title="Linux Shell Scripting Tutorial - A Beginner's handbook:General disclaimer">Disclaimers</a></li>
+<li id="footer-places-mobileview"><a href="https://bash.cyberciti.biz/wiki/index.php?title=Customize_the_bash_shell_environments&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+</ul>
+<ul id="footer-icons" class="noprint">
+<li id="footer-copyrightico">
+<a href="//creativecommons.org/licenses/by-nc-sa/3.0/"><img src="//i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" alt="Attribution-Noncommercial-Share Alike 3.0 Unported" width="88" height="31" /></a> </li>
+<li id="footer-poweredbyico">
+<a href="//www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a> </li>
+</ul>
+<div style="clear:both"></div>
+</div>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.016","walltime":"0.020","ppvisitednodes":{"value":249,"limit":1000000},"ppgeneratednodes":{"value":615,"limit":1000000},"postexpandincludesize":{"value":1234,"limit":2097152},"templateargumentsize":{"value":216,"limit":2097152},"expansiondepth":{"value":3,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"timingprofile":["100.00%    7.585      1 -total"," 37.57%    2.850      2 Template:Navigation"]},"cachereport":{"timestamp":"20171128195747","ttl":86400,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":36});});</script>
+</body>
+</html>
